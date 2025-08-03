@@ -32,8 +32,6 @@ export default function ResumePage() {
                         useCORS: true,
                         allowTaint: true,
                         backgroundColor: "#ffffff",
-                        width: 794, // A4 width in pixels at 96 DPI
-                        height: 1123, // A4 height in pixels at 96 DPI
                         scrollX: 0,
                         scrollY: 0,
                     })
@@ -100,13 +98,13 @@ export default function ResumePage() {
                         <div className="flex-1 p-8 print:p-6" style={{ width: "70%" }}>
                             {/* Header with Profile Picture */}
                             <div className="flex items-center mb-6">
-                                <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-blue-900 mr-4 flex-shrink-0">
+                                <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-blue-900 mr-4 flex-shrink-0 p-0.5">
                                     <Image
                                         src="/profile.png"
                                         alt="Florelyn C. Gregorio"
-                                        width={80}
-                                        height={80}
-                                        className="w-full h-full object-cover"
+                                        width={88}
+                                        height={88}
+                                        className="object-cover rounded-full"
                                     />
                                 </div>
                                 <div>
@@ -231,13 +229,6 @@ export default function ResumePage() {
 
             {/* Floating Action Buttons - Hidden in print */}
             <div className="print:hidden fixed bottom-8 right-8 flex flex-col gap-4 z-20">
-                <Button
-                    onClick={handleDownloadPDF}
-                    className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center"
-                >
-                    <Download className="h-5 w-5 mr-2" />
-                    Download
-                </Button>
                 <Button
                     onClick={handlePrint}
                     className="bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center"
