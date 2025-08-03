@@ -17,6 +17,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <base href="/modern-portfolio/" />
+      </head>
       <body className={inter.className}>{children}</body>
     </html>
   )
