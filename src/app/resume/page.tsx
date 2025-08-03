@@ -58,8 +58,9 @@ export default function ResumePage() {
             } catch (error) {
                 console.error("Error generating PDF:", error)
                 // Fallback: try to download a pre-made PDF
-                const link = document.createElement("a")
-                link.href = "/Florelyn_Gregorio_Resume.pdf"
+                const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+                const link = document.createElement("a");
+                link.href = `${basePath}/Florelyn_Gregorio_Resume.pdf`;
                 link.download = "Florelyn_Gregorio_Resume.pdf"
                 link.click()
             }
