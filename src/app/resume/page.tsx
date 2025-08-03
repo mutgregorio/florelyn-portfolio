@@ -327,7 +327,3 @@ export default function ResumePage() {
     )
 }
 
-# Replace <mutgregorio> and <modern-portfolio>
-git remote add origin https://github.com/<mutgregorio>/<modern-portfolio>.git
-git branch -M main
-git push -u origin main

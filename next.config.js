@@ -1,18 +1,18 @@
 /** @type {import('next').NextConfig} */
+
+const repo = 'modern-portfolio' // Replace with your repository name
+const assetPrefix = `/${repo}/`
+const basePath = `/${repo}`
+
 const nextConfig = {
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-  typescript: {
-    ignoreBuildErrors: true,
-  },
+  output: 'export',
+  assetPrefix: process.env.NODE_ENV === 'production' ? assetPrefix : undefined,
+  basePath: process.env.NODE_ENV === 'production' ? basePath : undefined,
   images: {
-    domains: ["localhost"],
     unoptimized: true,
-  },
-  experimental: {
-    optimizePackageImports: ["lucide-react"],
   },
 }
 
 module.exports = nextConfig
+
+
