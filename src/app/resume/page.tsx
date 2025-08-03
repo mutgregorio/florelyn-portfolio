@@ -80,13 +80,6 @@ export default function ResumePage() {
                         <ArrowLeft className="h-5 w-5" />
                         <span className="font-medium">Back to Portfolio</span>
                     </Link>
-                    <div className="flex space-x-4">
-                        <Button onClick={handlePrint} variant="outline" className="flex items-center space-x-2 bg-transparent">
-                            <Printer className="h-4 w-4" />
-                            <span>Print</span>
-                        </Button>
-                       
-                    </div>
                 </div>
             </div>
 
@@ -237,10 +230,17 @@ export default function ResumePage() {
             </div>
 
             {/* Floating Action Buttons - Hidden in print */}
-            <div className="print:hidden fixed bottom-8 right-8 flex gap-4 z-20">
+            <div className="print:hidden fixed bottom-8 right-8 flex flex-col gap-4 z-20">
+                <Button
+                    onClick={handleDownloadPDF}
+                    className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center"
+                >
+                    <Download className="h-5 w-5 mr-2" />
+                    Download
+                </Button>
                 <Button
                     onClick={handlePrint}
-                    className="bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                    className="bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center"
                 >
                     <Printer className="h-5 w-5 mr-2" />
                     Print
@@ -326,4 +326,3 @@ export default function ResumePage() {
         </div>
     )
 }
-

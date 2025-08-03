@@ -11,8 +11,10 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  // Add this to expose the basePath to the browser
+  env: {
+    NEXT_PUBLIC_BASE_PATH: process.env.NODE_ENV === 'production' ? basePath : '',
+  },
 }
 
 module.exports = nextConfig
-
-
